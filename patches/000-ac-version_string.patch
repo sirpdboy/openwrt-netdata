@@ -1,0 +1,13 @@
+--- a/configure.ac	2021-01-28 00:01:52.281630578 -0500
++++ b/configure.ac	2021-01-28 03:15:15.739835665 -0500
+@@ -5,9 +5,7 @@
+ AC_PREREQ(2.60)
+ 
+ # We do not use m4_esyscmd_s to support older autoconf.
+-define([VERSION_STRING], m4_esyscmd([git describe 2>/dev/null | tr -d '\n']))
+-define([VERSION_FROM_FILE], m4_esyscmd([cat packaging/version | tr -d '\n']))
+-m4_ifval(VERSION_STRING, [], [define([VERSION_STRING], VERSION_FROM_FILE)])
++define([VERSION_STRING], m4_esyscmd([cat packaging/version | tr -d '\n']))
+ 
+ AC_INIT([netdata], VERSION_STRING[])
+ 
